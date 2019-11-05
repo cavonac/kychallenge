@@ -21,8 +21,16 @@ namespace KyDevChallenge
     /// </summary>
     public partial class MainWindow : Window
     {
+        private readonly CounterModel counter;
+
         public MainWindow()
         {
+            counter = new CounterModel()
+            {
+                CounterOutput = 0
+            };
+
+            DataContext = counter;
             InitializeComponent();
 
             DispatcherTimer dtSeconds = new DispatcherTimer
@@ -34,10 +42,17 @@ namespace KyDevChallenge
             dtSeconds.Start();
         }
 
+
         private void DtSeconds_Tick(object sender, EventArgs e)
         {
-            // TODO: Change the execution of this event to increment a databound property
-            timerLabel.Content = DateTime.Now.ToLongTimeString();
+            // Increment watched counter object
+            counter.CounterOutput++;
+        }
+
+        private void ResetButton_Click(object sender, RoutedEventArgs e)
+        {
+            // Reset the watched counter object
+            counter.CounterOutput = 0;
         }
     }
 }
