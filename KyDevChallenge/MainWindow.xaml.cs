@@ -42,7 +42,6 @@ namespace KyDevChallenge
             dtSeconds.Start();
         }
 
-
         private void DtSeconds_Tick(object sender, EventArgs e)
         {
             // Increment watched counter object
