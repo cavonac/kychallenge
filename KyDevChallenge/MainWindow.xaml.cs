@@ -1,17 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using System.Windows.Threading;
 
 namespace KyDevChallenge
@@ -25,20 +13,18 @@ namespace KyDevChallenge
 
         public MainWindow()
         {
-            counter = new CounterModel()
-            {
-                Timer = 0, 
-                Count = 0
-            };
-
+            // Initialize model and set to data context
+            counter = new CounterModel();
             DataContext = counter;
             InitializeComponent();
 
+            // Initialize dispatch timer object
             DispatcherTimer dtSeconds = new DispatcherTimer
             {
                 Interval = new TimeSpan(0, 0, 1) // hr, min, secs
             };
 
+            // Call tick event and start timer
             dtSeconds.Tick += DtSeconds_Tick;
             dtSeconds.Start();
         }
@@ -57,7 +43,7 @@ namespace KyDevChallenge
 
         private void SetTimerButton_Click(object sender, RoutedEventArgs e)
         {
-            // TODO: Add validation in the model object
+            // TODO: Add validation in the model object instead of a dialog box
             var countText = setTimerTextBox.Text;
             if (int.TryParse(countText, out int result))
             {
@@ -72,6 +58,7 @@ namespace KyDevChallenge
 
         private void SetCounterButton_Click(object sender, RoutedEventArgs e)
         {
+            // Increment counter 
             counter.Count++;
         }
     }
