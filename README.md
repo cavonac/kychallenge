@@ -31,7 +31,7 @@ Also: Include a description of alternative way(s) of implementing a timer like t
 ---
 # Solution
 The best way to keep a timer on a different thread from the WPF application is:
-- DispatcherTimer object
+- [DispatcherTimer]("https://docs.microsoft.com/en-us/dotnet/api/system.windows.threading.dispatchertimer?view=netframework-4.8") object
   - Increments a variable that can be databound
   - Use the Tick event
   - Works on the Dispatcher queue thread and not the UI's thread
