@@ -29,3 +29,11 @@ Write a C# .NET GUI application that meets the following requirements:
 <br/><br/>
 Also: Include a description of alternative way(s) of implementing a timer like this that does not use another thread, but that also does not block the UI or cause other concurrency problems.
 ---
+# Solution
+The best way to keep a timer on a different thread from the WPF application is:
+- DispatcherTimer object
+  - Increments a variable that can be databound
+  - Use the Tick event
+  - Works on the Dispatcher queue thread and not the UI's thread
+- It must be implemented using code-behind to update a variable that is data-bound to the UI
+- Reset or update buttons will update the variable to 0
