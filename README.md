@@ -53,7 +53,8 @@ As far as implementing a solution without using another thread, a possible solut
 6. Does the set timer button set the seconds timer to valid integer values?
 7. Is there a counter displayed that starts at 0?
 8. Is there a button to increment the counter when clicked?
-9. Does the UI hang during testing?
+9. Does the UI not hang or crash during testing?
 10. Does the UI appear intuitive or has label text around functional aspects?
 11. Is the UI clean and easy to understand for non-expert users?
 12. Does the set timer text box work with negative values?
+13. The UI does not crash or hang when rapidly clicking the increment counter or reset buttons 
