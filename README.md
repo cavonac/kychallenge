@@ -56,3 +56,4 @@ As far as implementing a solution without using another thread, a possible solut
 9. Does the UI hang during testing?
 10. Does the UI appear intuitive or has label text around functional aspects?
 11. Is the UI clean and easy to understand for non-expert users?
+12. Does the set timer text box work with negative values?
