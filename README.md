@@ -37,3 +37,9 @@ The best way to keep a timer on a different thread from the WPF application is:
   - Works on the Dispatcher queue thread and not the UI's thread
 - It must be implemented using code-behind to update a variable that is data-bound to the UI
 - Reset or update buttons will update the variable to 0
+- If properly data bound, any changes to variables ought to be displayed properly
+- Since validation is on a single input, I did not choose to implement the interfaces that notify on error
+  - Instead, I choose to display an error message in a dialog (being careful not to reflect the data)
+  - It performs a int.TryParse on the text when the button is clicked
+<br/><br/>
+As far as implementing a solution without using another thread, a possible solution would be to manage everything with try/catch blocks on the input but this could get bulky. 
