@@ -41,5 +41,18 @@ The best way to keep a timer on a different thread from the WPF application is:
 - Since validation is on a single input, I did not choose to implement the interfaces that notify on error
   - Instead, I choose to display an error message in a dialog (being careful not to reflect the data)
   - It performs a int.TryParse on the text when the button is clicked
-<br/><br/>
-As far as implementing a solution without using another thread, a possible solution would be to manage everything with try/catch blocks on the input but this could get bulky. 
+
+As far as implementing a solution without using another thread, a possible solution would be to manage everything with try/catch blocks on the input but this could get bulky. I do not recommend creating automated tests for WPF application until there are some library classes created. Instead, test manually.
+
+## UI Manual Test Cases
+1. Does the application display an integer value representing the number of seconds since application start?
+2. Does the timer increment each second, starting from 0?
+3. Is there a reset button that when clicked resets the seconds timer to 0?
+4. Is there a text box for inputting a new integer count on the seconds timer?
+5. Is the text box input validated when the set timer button is clicked with an invalid string?
+6. Does the set timer button set the seconds timer to valid integer values?
+7. Is there a counter displayed that starts at 0?
+8. Is there a button to increment the counter when clicked?
+9. Does the UI hang during testing?
+10. Does the UI appear intuitive or has label text around functional aspects?
+11. Is the UI clean and easy to understand for non-expert users?
