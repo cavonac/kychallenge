@@ -23,7 +23,6 @@ namespace KyDevChallenge
         public MainWindow()
         {
             InitializeComponent();
-            timerLabel.DataContext = new TimerTicker() { TimeSince = 0 };
         }
     }
 }
