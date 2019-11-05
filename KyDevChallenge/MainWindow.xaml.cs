@@ -27,7 +27,8 @@ namespace KyDevChallenge
         {
             counter = new CounterModel()
             {
-                CounterOutput = 0
+                Timer = 0, 
+                Count = 0
             };
 
             DataContext = counter;
@@ -45,13 +46,33 @@ namespace KyDevChallenge
         private void DtSeconds_Tick(object sender, EventArgs e)
         {
             // Increment watched counter object
-            counter.CounterOutput++;
+            counter.Timer++;
         }
 
         private void ResetButton_Click(object sender, RoutedEventArgs e)
         {
             // Reset the watched counter object
-            counter.CounterOutput = 0;
+            counter.Timer = 0;
+        }
+
+        private void SetTimerButton_Click(object sender, RoutedEventArgs e)
+        {
+            // TODO: Add validation in the model object
+            var countText = setTimerTextBox.Text;
+            if (int.TryParse(countText, out int result))
+            {
+                counter.Timer = result;
+            }
+            else
+            {
+                MessageBox.Show("Unable to parse input. Try again with an integer", 
+                    "Invalid input", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
+        }
+
+        private void SetCounterButton_Click(object sender, RoutedEventArgs e)
+        {
+            counter.Count++;
         }
     }
 }
