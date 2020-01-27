@@ -1,4 +1,4 @@
-# kychallenge
+# WPF-Example
 ##### by Christopher Canova
 ## From the interviewer:
 As part of our interview process, I’d like to ask you to send me software code with unit tests so I could assess your skills. Please respond within approximately 48 hours.  __Please make sure that the code does not violate your confidentiality obligations to your former or current employer which probably prohibits you from sharing the code with outside parties.__ Please send your code for review, not spending more than a few hours, through GitHub (preferred) or zip file over email (or contact me if you would like to use an alternative).
