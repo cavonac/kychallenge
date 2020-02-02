@@ -42,7 +42,7 @@ The best way to keep a timer on a different thread from the WPF application is:
   - Instead, I choose to display an error message in a dialog (being careful not to reflect the data)
   - It performs a int.TryParse on the text when the button is clicked
 
-As far as implementing a solution without using another thread, a possible solution would be to manage everything with try/catch blocks on the input but this could get bulky. I do not recommend creating automated tests for WPF application until there are some library classes created. Instead, test manually.
+I do not recommend creating automated tests for WPF application until there are some library classes created. Instead, test manually.
 
 ## UI Manual Test Cases
 1. Does the application display an integer value representing the number of seconds since application start?
